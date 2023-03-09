@@ -36,7 +36,7 @@ def ORE(data, categoricalLabels):
     OREdata = pd.concat([OREdata, OREcolumns], axis = 1)
 
     OREdata['income'] = OREdata['income'].apply(lambda p: 1 if p == '>50K' else 0) # Codifica o Y em Booleano, mantive
-
+    
     return OREdata, old_data
 
 def preProcessamento(data, encode):
@@ -51,5 +51,5 @@ def preProcessamento(data, encode):
     elif(encode == "ordinal"):
         data, old_data = ORE(data, categoricalLabels)
     else:
-        return data, race, old_data  
+        return data, race, old_data
     return data, race, old_data
